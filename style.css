@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	/* margin: 0;
+	padding: 0; */
+}
+
+:root {
+	--primary-color: #2b2b2b;
+	--secondary-color: #777777;
+	--bg-color: #fff;
+	--font-color: #424242;
+	--heading-color: #282828;
+}
+
+[data-theme='dark'] {
+	--primary-color: #d9d9d9;
+	--secondary-color: #818181;
+	--bg-color: #151515;
+	--font-color: #e1e1e1;
+	--heading-color: #777;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	background-color: var(--bg-color);
+	color: var(--font-color);
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-end;
+	/* justify-items: flex-end; */
+	padding: 20px 0;
+}
+
+h1 {
+	color: var(--heading-color);
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	color: var(--secondary-color);
+	text-decoration: underline;
+}
+
+.post {
+	margin-bottom: 2rem;
+	border-bottom: 1px dashed var(--secondary-color);
+	padding-bottom: 10px;
+}
+
+.checkbox {
+	position: absolute;
+}
+
+.label {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50px;
+	height: 25px;
+	padding: 5px;
+	border-radius: 50px;
+	background-color: #111;
+	transform: scale(1.15);
+}
+
+.ball {
+	position: absolute;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: all 0.15s linear;
+}
+
+#checkbox:checked + .label .ball {
+	background-color: #000;
+	transform: translateX(24px);
+}
+
+#checkbox:checked + .label {
+	background-color: #878787;
+}
+
+.label .fa-moon {
+	color: orange;
+}
+
+.label .fa-sun {
+	color: yellow;
+}
